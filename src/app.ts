@@ -1,36 +1,23 @@
-import express, { Request, Response, NextFunction } from "express";
-import expressValidator from "express-validator";
-import cors from "cors";
-import bodyParser from "body-parser";
-import morgan from "morgan";
-
-require("dotenv").config();
+import express, { Request, Response } from "express";
+// import cors from "cors";
 
 import config from './utils/db';
 import { mongooseConnection } from "./utils/connection";
 
+require("dotenv").config();
 // Routes
 // import initializeRoutes from "./routes/initializeRoutes";
 
-const DB = process.env.MONGODB_URI || config.prod;
+const DB = process.env.MONGODB_URI || config.dev;
 
-export const app = express();
-app.set("port", process.env.PORT || 3001);
+const app = express();
 
-// Middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressValidator());
-app.use(morgan("tiny")); // Show through the console all the request at server
-
-app.disable("x-powered-by");
-
-app.use(
-    cors({
-        credentials: true,
-        origin: true
-    })
-);
+// app.use(
+//     cors({
+//         credentials: true,
+//         origin: true
+//     })
+// );
 
 // initializeRoutes(app);
 

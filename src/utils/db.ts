@@ -1,6 +1,6 @@
 const config = {
-   dev: 'mongodb://localhost/boschTest',
-   prod: 'mongodb://localhost/boschTest',
+   dev: 'mongodb://localhost/gardenersDev',
+   prod: 'mongodb://localhost/gardenersProd',
    webhost: '',
    secretKey: 'secretKey'
 };

@@ -1,16 +1,18 @@
-import { Model, Document } from "mongoose";
+import { Document } from "mongoose";
 
 export interface Questions extends Document {
-    questionText: String;
-    idTarget: Number;
-    category: String;
+    questionText: string;
+    idTarget: number;
+    category: string;
     answers: Answers[] | undefined;
-    isCorrect: Number;
-    selectedAnswer: String;
+    isCorrect: number;
+    selectedAnswer: string;
+    password: string;
 
 }
 
 export type Answers = {
-    answer: String;
-    isCorrect: Boolean;
+    answer: string;
+    isCorrect: boolean;
 };
+
