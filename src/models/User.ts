@@ -39,7 +39,7 @@ UserSchema.pre<IUserDocument>("save", function(next: NextFunction) {
 })
 
 
-UserSchema.methods.setPassword = async function (password: string) {
+UserSchema.methods.changePassword = async function (password: string) {
     const hash = await bcrypt.hash(password,salt)
     this.password = hash
 }
